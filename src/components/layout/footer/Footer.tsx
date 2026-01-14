@@ -5,7 +5,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessage2Line } from "react-icons/ri";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Footer: FC = () => {
   const [email, setEmail] = useState("");

@@ -21,15 +21,16 @@ const About: FC = () => {
           <div className="about--block">
             <h1>
               Dastan Asanbekov <br />
-              I'm a Junior Developer
+              I&apos;m a Full-stack Developer
             </h1>
             <p>
               <span>Я Front-End разработчик</span>, специализирующийся на
-              создании веб-сайтов. В настоящее <br /> время я обучаюсь в
+              создании веб-сайтов. <br /> В настоящее время я обучаюсь в
               IT-академии
-              <span> Motion Web</span>. Мне 20 лет, я живу в{" "}
-              <span>Кыргызстане</span>, и передо <br /> мной стоят большие цели,
-              которых я планирую достичь!
+              <span> Motion Web</span>. Мне 20 лет, <br /> я живу в
+              <span>Кыргызстане</span>, и передо мной стоят большие цели,
+              которых я <br />
+              планирую достичь!
             </p>
           </div>
           <div className="about--card">

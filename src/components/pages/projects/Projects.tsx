@@ -97,7 +97,7 @@ const Projects: FC = () => {
                     </button>
                     {project.github && (
                       <button
-                        onClick={() => openLink(project.github)}
+                        onClick={() => openLink(project.github!)}
                         className="project-card__button project-card__button--github"
                         aria-label={`Открыть GitHub ${project.title}`}
                       >
