@@ -1,0 +1,170 @@
+#about {
+  margin-top: 80px;
+
+  .about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+
+    &--block {
+      max-width: 600px;
+
+      h1 {
+        color: white;
+        line-height: 60px;
+        font-weight: 700;
+        font-size: 40px;
+      }
+
+      p {
+        margin-top: 20px;
+        color: white;
+        line-height: 25px;
+        font-weight: 200;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+    }
+
+    &--card {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      &__title {
+        background: url("../../../assets/Asanbekov.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 220px;
+        height: 300px;
+        position: relative;
+        opacity: 0.3;
+        border-radius: 10px;
+        transition: 0.4s;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+          font-size: 25px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: rgba(0, 0, 0, 0.45);
+          transition: 0.3s;
+        }
+
+        h1:hover {
+          color: #1107ee;
+          border-bottom: 1px solid #1107ee;
+        }
+      }
+
+      &__icon {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        button {
+          width: 150px;
+          height: 40px;
+          color: white;
+          background: transparent;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          border: 1px solid #1107ee;
+          font-size: 14px;
+          transition: 0.4s;
+        }
+
+        button:hover {
+          background: #1107ee;
+        }
+
+        .Instagram:hover {
+          color: #ff0967;
+        }
+        .Whatsapp:hover {
+          color: #2cd46b;
+        }
+        .Telegram:hover {
+          color: #2faae9;
+        }
+        .Linkedin:hover {
+          color: #0980ba;
+        }
+      }
+    }
+  }
+}
+
+/* 📲 TABLET */
+@media (max-width: 992px) {
+  #about {
+    .about {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &--block {
+        h1 {
+          font-size: 34px;
+          line-height: 50px;
+        }
+      }
+
+      &--card {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 576px) {
+  #about {
+    margin-top: 50px;
+
+    .about {
+      gap: 30px;
+
+      &--block {
+        h1 {
+          font-size: 26px;
+          line-height: 38px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 22px;
+
+          br {
+            display: none;
+          }
+        }
+      }
+
+      &--card {
+        &__title {
+          width: 180px;
+          height: 240px;
+        }
+
+        &__icon {
+          button {
+            width: 100%;
+            max-width: 220px;
+          }
+        }
+      }
+    }
+  }
+}

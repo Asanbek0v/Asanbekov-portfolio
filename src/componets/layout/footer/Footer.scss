@@ -1,0 +1,144 @@
+#footer {
+  margin: 100px 0 200px;
+
+  h1 {
+    font-size: 30px;
+    color: #00b4ff;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100px;
+      height: 3px;
+      background: #00b4ff;
+      border-radius: 3px;
+    }
+  }
+
+  .footer {
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border-radius: 30px;
+    background: #4a62a510;
+    padding: 30px 20px;
+    position: relative;
+
+    h2 {
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.68);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      background: #f8f8f810;
+      color: white;
+      padding: 0 20px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input::placeholder {
+      color: #8892b0;
+    }
+
+    input:focus {
+      border: 1px solid white;
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      font-size: 16px;
+      border-radius: 10px;
+      background: #f8f8f810;
+      color: #f8f8f8b0;
+      border: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border: 1px solid white;
+    }
+
+    .user,
+    .email,
+    .message {
+      position: absolute;
+      right: 29px;
+      color: #f8f8f841;
+      font-size: 17px;
+    }
+
+    .user {
+      top: 185px;
+    }
+    .email {
+      top: 260px;
+    }
+    .message {
+      top: 335px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #footer {
+    margin: 80px 0 120px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .footer {
+      padding: 25px 15px;
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .user,
+      .email,
+      .message {
+        right: 15px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* 📲 TABLET */
+@media (max-width: 768px) {
+  #footer {
+    h1 {
+      font-size: 26px;
+    }
+  }
+}
