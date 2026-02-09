@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.scss";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* three.js */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
           strategy="beforeInteractive"
@@ -43,12 +45,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}
       >
+        {/* vanta */}
         <Script
           src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"
           strategy="afterInteractive"
         />
 
-        {/* VANTA BACKGROUND */}
+        {/* background layer */}
         <div
           id="vanta-canvas"
           style={{
@@ -61,9 +64,10 @@ export default function RootLayout({
           }}
         />
 
+        {/* init */}
         <Script id="vanta-init" strategy="afterInteractive">
           {`
-            function startVanta() {
+            (function startVanta() {
               if (window.VANTA && window.VANTA.NET) {
                 window.VANTA.NET({
                   el: "#vanta-canvas",
@@ -84,14 +88,13 @@ export default function RootLayout({
               } else {
                 setTimeout(startVanta, 200);
               }
-            }
-            startVanta();
+            })();
           `}
         </Script>
 
         <ToastContainer />
 
-        {/* CONTENT */}
+        {/* content */}
         <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
       </body>
     </html>
