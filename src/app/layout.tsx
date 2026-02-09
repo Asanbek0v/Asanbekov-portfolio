@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
-  subsets: ["latin", "cyrillic"], // Кирилица үчүн
+  subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -39,24 +39,25 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}
-        style={{ margin: 0 }}
       >
         <Script
           src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"
           strategy="afterInteractive"
         />
 
+        {/* VANTA BACKGROUND */}
         <div
           id="vanta-canvas"
           style={{
             position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            zIndex: -1,
+            inset: 0,
+            width: "100%",
+            height: "100svh",
+            zIndex: 0,
+            pointerEvents: "none",
           }}
         />
 
@@ -69,15 +70,15 @@ export default function RootLayout({
                   mouseControls: true,
                   touchControls: true,
                   gyroControls: false,
-                  minHeight: 200.0,
-                  minWidth: 200.0,
-                  scale: 1.0,
-                  scaleMobile: 1.0,
+                  minHeight: 200,
+                  minWidth: 200,
+                  scale: 1,
+                  scaleMobile: 1,
                   color: 0x3f62ff,
                   backgroundColor: 0x23153c,
-                  points: 20.0,
-                  maxDistance: 20.0,
-                  spacing: 15.0,
+                  points: 20,
+                  maxDistance: 20,
+                  spacing: 15,
                   showDots: true
                 });
               } else {
@@ -87,7 +88,10 @@ export default function RootLayout({
             startVanta();
           `}
         </Script>
+
         <ToastContainer />
+
+        {/* CONTENT */}
         <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
       </body>
     </html>
